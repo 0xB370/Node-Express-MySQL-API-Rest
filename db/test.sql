@@ -1,3 +1,4 @@
+--Replace "node_api" for your DB name
 CREATE DATABASE IF NOT EXISTS node_api;
 
 USE node_api;

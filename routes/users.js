@@ -2,15 +2,19 @@ var express = require('express');
 var router = express.Router();
 const user = require('../models/userModel');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
+/**
+ * GET users listing.
+ */
+router.get('/users', function(req, res, next) {
   user.getUsers((err, data) => {
       res.json(data);
   })
 });
 
-
-router.post('/new', (req, res) => {
+/**
+ * POST new user
+ */
+router.post('/users/new', (req, res) => {
   const userData = {
       id: null,
       usuario: req.body.usuario,
@@ -32,8 +36,10 @@ router.post('/new', (req, res) => {
   });
 });
 
-
-router.put('/update/:id', (req, res) => {
+/**
+ * Update existing user
+ */
+router.put('/users/update/:id', (req, res) => {
   const userData = {
       id: req.params.id,
       usuario: req.body.usuario,
@@ -55,8 +61,10 @@ router.put('/update/:id', (req, res) => {
   });
 });
 
-
-router.delete('/delete/:id', (req, res) => {
+/**
+ * Delete user
+ */
+router.delete('/users/delete/:id', (req, res) => {
   user.deleteUser(req.params.id, (err, data) => {
       if(data && (data.msg === "Deleted user" || data.msg === "Nonexistent user")) {
           res.json({

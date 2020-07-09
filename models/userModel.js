@@ -1,11 +1,12 @@
 const mysql = require('mysql');
 
+//Replace for your DB data
 const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
-    user: 'beto',
+    user: 'root',
     password: '',
-    database: 'studio404_'
+    database: 'node_api'
 });
   
 mysqlConnection.connect(function (err) {
