@@ -18,6 +18,8 @@ To run the app locally, ensure that your system has:
 
 - Start apache2 and MySQL services.
 
+- Run the MySQL statements declared in the db/test.sql file.
+
 - Run _npm start_ (or _npm run dev_ to execute with nodemon).
 
 - Open your browser at _localhost:3000_ to verify that there's no errors.
